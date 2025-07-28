@@ -1,2 +1,22 @@
-<h1>Fimler</h1>
-<movie></movie>
+<movie-detail [SelectedMovieDetail]="selectedMovie"></movie-detail> 
+<!-- 
+movie-detail component'inin SelectedMovieDetail değerine selectedMovie değerini gönderiyoruz
+Daha sonra movie-detail componenti içerisinde @Input ile bu değeri buradan gelen selectedMovie değerini
+SelectedMovieDetail değerine atıyoruz
+-->
+
+<div class="card">
+    <div class="card-header">
+        {{title}}
+    </div>
+    <ul class="list-group list-group-flush">
+        <li *ngFor="let item of GetMovieList()" class="list-group-item" (click)="MakeVisibleSelectedItem(item)"
+            [class.active]="selectedMovie === item">
+            <!-- selectedMovie property'sinin değerine göre class özelliğini active yapıyoruz-->
+            <!-- Seçilen filme göre arka planı mavi yapıyoruz -->
+            <span class="badge bg-primary">{{item.MovieId}}</span> {{item.MovieName}}
+            <span class="close">X</span>
+        </li>
+
+    </ul>
+</div>

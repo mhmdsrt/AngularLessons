@@ -1,0 +1,13 @@
+<div class="card">
+    <div class="card-body">
+        <span class="badge bg-success">
+            id: {{SelectedMovieDetail.MovieId}} name: {{SelectedMovieDetail.MovieName}}
+        </span>
+        <div class="input-group">
+            <input type="text" class="form-control" [(ngModel)]="SelectedMovieDetail.MovieName"><!-- Çift taraflı veri bağlama-->
+            <div class="input-group-append">
+                <button class="btn btn-outline-secondary" type="button">Güncelle</button>
+            </div>
+        </div>
+    </div>
+</div>
